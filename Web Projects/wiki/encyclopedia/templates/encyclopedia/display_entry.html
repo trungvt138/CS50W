@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }} - Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <div>
+        <!-- Render the entry as safe HTML. If Markdown is converted to HTML in the backend, this will render correctly -->
+        {{ entry|safe }}
+        <div>
+            <a href="{% url 'edit_entry' title %}">
+                <button type="submit">Edit Entry</button>    
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
