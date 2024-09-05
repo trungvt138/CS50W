@@ -18,15 +18,13 @@ class Comment(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
 class Listing(models.Model):
-    listing_id = models.Inte
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     description = models.TextField()
     price = models.IntegerField()
-    bid = models.ForeignKey(Bid, on_delete=models.CASCADE)
+    start_bid = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='images/')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comments = models.ManyToManyField(Comment)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

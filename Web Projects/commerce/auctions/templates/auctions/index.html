@@ -3,5 +3,14 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    TODO
+    <ul>
+        {% for listing in listings %}
+            <li>
+                <a>
+                    {{ listing.name }}: {{ flight.price }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    
 {% endblock %}
