@@ -18,7 +18,7 @@ class Comment(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
 class Listing(models.Model):
-    listing_id = models.IntegerField()
+    listing_id = models.Inte
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     description = models.TextField()
