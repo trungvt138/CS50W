@@ -1,3 +1,70 @@
 body {
     padding: 10px;
 }
+
+/* Base styles for the container */
+.container {
+    display: flex;
+    flex-direction: column; /* Arrange listings vertically */
+    align-items: flex-start; /* Align items to the left */
+    margin: 0; /* Center the container in the viewport */
+    padding: 20px; /* Add padding around the container */
+    width: 80%; /* Set a width for the container */
+}
+
+/* Individual listing styles */
+.listing {
+    display: flex; /* Use flexbox for layout */
+    width: 100%; /* Use full width for each listing */
+    margin: 15px 0; /* Space between each listing */
+    border: 1px solid #ccc; /* Optional: border around listings */
+    padding: 10px; /* Padding inside the listing */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+/* Hover effect for listings */
+.listing:hover {
+    transform: scale(1.02); /* Slightly enlarge listing on hover */
+}
+
+/* Image styles */
+.image img {
+    width: 150px; /* Set fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: rounded corners for images */
+}
+
+/* Details section styles */
+.details {
+    margin-left: 20px; /* Space between image and details */
+    flex-grow: 1; /* Allow details to take remaining space */
+}
+
+/* Header styles */
+h1 {
+    text-align: left; /* Align header to the left */
+    font-size: 2em; /* Increase header size */
+    margin-bottom: 20px; /* Space below the header */
+    width: 80%; /* Match the width of the container */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .listing {
+        flex-direction: column; /* Stack image above text on small screens */
+        align-items: center; /* Center align the items */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .image img {
+        width: 100%; /* Use full width on smaller screens */
+        max-width: 300px; /* Set a max-width for larger images */
+    }
+
+    .details {
+        margin-left: 0; /* Remove margin on small screens */
+        text-align: center; /* Center text on small screens */
+    }
+}

@@ -1,16 +1,22 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
-
-    <ul>
+    <h1>Active Listings</h1>
+    
+    <div class="container">
         {% for listing in listings %}
-            <li>
-                <a>
-                    {{ listing.name }}: {{ flight.price }}
-                </a>
-            </li>
+            <div class="listing">
+                    <div class="image">
+                        <img src="{{ listing.image_url }}" alt="{{ listing.title }}" >
+                    </div>
+                    <div class="details">
+                        <h2>{{ listing.title }}</h2>
+                        <p>Price: €{{ listing.current_bid }}</p>
+                        <p>Starting Bid: €{{ listing.starting_bid }}</p>
+                        <p>Created: {{ listing.created_at }}</p>
+                    </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
     
 {% endblock %}
